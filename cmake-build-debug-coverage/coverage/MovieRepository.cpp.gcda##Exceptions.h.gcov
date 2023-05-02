@@ -1,0 +1,29 @@
+        -:    0:Source:/home/octav/CLionProjects/LAB9OOP/Exceptions.h
+        -:    0:Graph:/home/octav/CLionProjects/LAB9OOP/cmake-build-debug-coverage/CMakeFiles/LAB9OOP.dir/MovieRepository.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/LAB9OOP/cmake-build-debug-coverage/CMakeFiles/LAB9OOP.dir/MovieRepository.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include <string>
+        -:    3:#include <utility>
+        -:    4:
+        -:    5:class ValidationException {
+        -:    6:private:
+        -:    7:    std::string message;
+        -:    8:public:
+        -:    9:    ValidationException(std::string message) : message{std::move(message)} {}
+        -:   10:    friend std::ostream &operator<<(std::ostream &os, const ValidationException &exception);
+        -:   11:};
+        -:   12:
+        -:   13:class RepositoryException {
+        -:   14:private:
+        -:   15:    std::string message;
+        -:   16:public:
+function _ZN19RepositoryExceptionC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 11 returned 100% blocks executed 100%
+       11:   17:    RepositoryException(std::string message) : message{std::move(message)} {}
+       11:   17-block  0
+call    0 returned 11
+call    1 returned 11
+        -:   18:
+        -:   19:    friend std::ostream &operator<<(std::ostream &os, const RepositoryException &exception);
+        -:   20:
+        -:   21:};

@@ -1,0 +1,96 @@
+        -:    0:Source:/home/octav/CLionProjects/LAB9OOP/Validator.cpp
+        -:    0:Graph:/home/octav/CLionProjects/LAB9OOP/cmake-build-debug-coverage/CMakeFiles/LAB9OOP.dir/Validator.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/LAB9OOP/cmake-build-debug-coverage/CMakeFiles/LAB9OOP.dir/Validator.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include "Validator.h"
+        -:    3:
+function _ZN9Validator13validateMovieERK5Movie called 14 returned 71% blocks executed 94%
+       14:    4:void Validator::validateMovie(const Movie &movie) {
+       14:    5:    string errors;
+       14:    5-block  0
+call    0 returned 14
+       14:    6:    if (movie.getTitle().empty()) {
+call    0 returned 14
+branch  1 taken 14 (fallthrough)
+branch  2 taken 0 (throw)
+       14:    6-block  0
+call    3 returned 14
+call    4 returned 14
+branch  5 taken 3 (fallthrough)
+branch  6 taken 11
+        3:    7:        errors += "Title cannot be empty!\n";
+        3:    7-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        -:    8:    }
+       14:    9:    if (movie.getGenre().empty()) {
+       14:    9-block  0
+call    0 returned 14
+branch  1 taken 14 (fallthrough)
+branch  2 taken 0 (throw)
+       14:    9-block  1
+call    3 returned 14
+call    4 returned 14
+branch  5 taken 4 (fallthrough)
+branch  6 taken 10
+        4:   10:        errors += "Genre cannot be empty!\n";
+        4:   10-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   11:    }
+       14:   12:    if (movie.getYear() < 0) {
+       14:   12-block  0
+call    0 returned 14
+branch  1 taken 14 (fallthrough)
+branch  2 taken 0 (throw)
+       14:   12-block  1
+branch  3 taken 4 (fallthrough)
+branch  4 taken 10
+        4:   13:        errors += "Year cannot be negative!\n";
+        4:   13-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   14:    }
+       14:   15:    if (movie.getMainActor().empty()) {
+       14:   15-block  0
+call    0 returned 14
+branch  1 taken 14 (fallthrough)
+branch  2 taken 0 (throw)
+       14:   15-block  1
+call    3 returned 14
+call    4 returned 14
+branch  5 taken 4 (fallthrough)
+branch  6 taken 10
+        4:   16:        errors += "Main actor cannot be empty!\n";
+        4:   16-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   17:    }
+       14:   18:    if (!errors.empty()) {
+       14:   18-block  0
+call    0 returned 14
+branch  1 taken 4 (fallthrough)
+branch  2 taken 10
+        4:   19:        throw ValidationException(errors);
+        4:   19-block  0
+call    0 returned 4
+call    1 returned 4
+branch  2 taken 4 (fallthrough)
+branch  3 taken 0 (throw)
+        4:   19-block  1
+call    4 returned 4
+call    5 returned 4
+call    6 returned 4
+    $$$$$:   19-block  2
+call    7 never executed
+        -:   20:    }
+       14:   21:}
+       10:   21-block  0
+call    0 returned 10
+        4:   21-block  1
+call    1 returned 4
