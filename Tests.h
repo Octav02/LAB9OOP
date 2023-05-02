@@ -20,5 +20,7 @@ private:
     void testService();
 
     void testIO();
+
+    void testUndo();
 };
 

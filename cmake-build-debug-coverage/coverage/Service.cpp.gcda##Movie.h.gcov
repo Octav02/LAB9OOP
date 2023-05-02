@@ -17,7 +17,12 @@
         -:   13:    string mainActor;
         -:   14:
         -:   15:public:
-        -:   16:    Movie() = default;
+function _ZN5MovieC2Ev called 0 returned 0% blocks executed 0%
+    #####:   16:    Movie() = default;
+    %%%%%:   16-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
         -:   17:
         -:   18:    Movie(const string &title, const string &genre, int year, const string &mainActor);
         -:   19:

@@ -159,25 +159,22 @@
         -:  155:      _GLIBCXX20_CONSTEXPR
     #####:  156:      allocator() _GLIBCXX_NOTHROW { }
 ------------------
-_ZNSaINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2Ev:
-function _ZNSaINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2Ev called 0 returned 0% blocks executed 0%
-    #####:  156:      allocator() _GLIBCXX_NOTHROW { }
-    %%%%%:  156-block  0
-call    0 never executed
-------------------
 _ZNSaI5MovieEC2Ev:
 function _ZNSaI5MovieEC2Ev called 0 returned 0% blocks executed 0%
     #####:  156:      allocator() _GLIBCXX_NOTHROW { }
     %%%%%:  156-block  0
 call    0 never executed
 ------------------
+_ZNSaINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2Ev:
+function _ZNSaINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2Ev called 0 returned 0% blocks executed 0%
+    #####:  156:      allocator() _GLIBCXX_NOTHROW { }
+    %%%%%:  156-block  0
+call    0 never executed
+------------------
         -:  157:
         -:  158:      _GLIBCXX20_CONSTEXPR
-function _ZNSaI5MovieEC2ERKS0_ called 70 returned 100% blocks executed 100%
-       70:  159:      allocator(const allocator& __a) _GLIBCXX_NOTHROW
-       70:  160:      : __allocator_base<_Tp>(__a) { }
-       70:  160-block  0
-call    0 returned 70
+        -:  159:      allocator(const allocator& __a) _GLIBCXX_NOTHROW
+        -:  160:      : __allocator_base<_Tp>(__a) { }
         -:  161:
         -:  162:#if __cplusplus >= 201103L
         -:  163:      // Avoid implicit deprecation.
@@ -191,20 +188,10 @@ call    0 returned 70
         -:  171:#if __cpp_constexpr_dynamic_alloc
         -:  172:      constexpr
         -:  173:#endif
-    #####:  174:      ~allocator() _GLIBCXX_NOTHROW { }
-------------------
-_ZNSaINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEED2Ev:
 function _ZNSaINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEED2Ev called 0 returned 0% blocks executed 0%
     #####:  174:      ~allocator() _GLIBCXX_NOTHROW { }
     %%%%%:  174-block  0
 call    0 never executed
-------------------
-_ZNSaI5MovieED2Ev:
-function _ZNSaI5MovieED2Ev called 0 returned 0% blocks executed 0%
-    #####:  174:      ~allocator() _GLIBCXX_NOTHROW { }
-    %%%%%:  174-block  0
-call    0 never executed
-------------------
         -:  175:
         -:  176:#if __cplusplus > 201703L
         -:  177:      [[nodiscard,__gnu__::__always_inline__]]

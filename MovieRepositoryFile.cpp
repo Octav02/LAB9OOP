@@ -6,8 +6,8 @@ void MovieRepositoryFile::loadFromFile() {
     if (!fin.is_open()) {
         throw RepositoryException("File could not be opened!");
     }
-
-    this->movies = vector<Movie>();
+    //Clear the vector
+    this->movies.clear();
     string line;
     while (getline(fin, line)) {
         stringstream ss(line);
@@ -47,18 +47,21 @@ void MovieRepositoryFile::add(const Movie &movie) {
     this->loadFromFile();
     MovieRepository::add(movie);
     this->writeToFile();
+    this->loadFromFile();
 }
 
 void MovieRepositoryFile::remove(const Movie &movie) {
     this->loadFromFile();
     MovieRepository::remove(movie);
     this->writeToFile();
+    this->loadFromFile();
 }
 
 void MovieRepositoryFile::update(const Movie &movie) {
     this->loadFromFile();
     MovieRepository::update(movie);
     this->writeToFile();
+    this->loadFromFile();
 }
 
 MovieRepositoryFile::~MovieRepositoryFile() {

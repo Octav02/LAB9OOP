@@ -80,11 +80,11 @@
         -:   76:#endif
         -:   77:
         -:   78:      _GLIBCXX20_CONSTEXPR
-      29*:   79:      new_allocator() _GLIBCXX_USE_NOEXCEPT { }
+      10*:   79:      new_allocator() _GLIBCXX_USE_NOEXCEPT { }
 ------------------
 _ZN9__gnu_cxx13new_allocatorI5MovieEC2Ev:
-function _ZN9__gnu_cxx13new_allocatorI5MovieEC2Ev called 29 returned 100% blocks executed 100%
-       29:   79:      new_allocator() _GLIBCXX_USE_NOEXCEPT { }
+function _ZN9__gnu_cxx13new_allocatorI5MovieEC2Ev called 10 returned 100% blocks executed 100%
+       10:   79:      new_allocator() _GLIBCXX_USE_NOEXCEPT { }
 ------------------
 _ZN9__gnu_cxx13new_allocatorIcEC2Ev:
 function _ZN9__gnu_cxx13new_allocatorIcEC2Ev called 0 returned 0% blocks executed 0%
@@ -99,11 +99,15 @@ function _ZN9__gnu_cxx13new_allocatorIcEC2Ev called 0 returned 0% blocks execute
         -:   86:	new_allocator(const new_allocator<_Tp1>&) _GLIBCXX_USE_NOEXCEPT { }
         -:   87:
         -:   88:#if __cplusplus <= 201703L
-      99*:   89:      ~new_allocator() _GLIBCXX_USE_NOEXCEPT { }
+      38*:   89:      ~new_allocator() _GLIBCXX_USE_NOEXCEPT { }
+------------------
+_ZN9__gnu_cxx13new_allocatorISt10unique_ptrI11ActiuneUndoSt14default_deleteIS2_EEED2Ev:
+function _ZN9__gnu_cxx13new_allocatorISt10unique_ptrI11ActiuneUndoSt14default_deleteIS2_EEED2Ev called 2 returned 100% blocks executed 100%
+        2:   89:      ~new_allocator() _GLIBCXX_USE_NOEXCEPT { }
 ------------------
 _ZN9__gnu_cxx13new_allocatorI5MovieED2Ev:
-function _ZN9__gnu_cxx13new_allocatorI5MovieED2Ev called 99 returned 100% blocks executed 100%
-       99:   89:      ~new_allocator() _GLIBCXX_USE_NOEXCEPT { }
+function _ZN9__gnu_cxx13new_allocatorI5MovieED2Ev called 36 returned 100% blocks executed 100%
+       36:   89:      ~new_allocator() _GLIBCXX_USE_NOEXCEPT { }
 ------------------
 _ZN9__gnu_cxx13new_allocatorIcED2Ev:
 function _ZN9__gnu_cxx13new_allocatorIcED2Ev called 0 returned 0% blocks executed 0%
@@ -151,9 +155,7 @@ function _ZN9__gnu_cxx13new_allocatorIcED2Ev called 0 returned 0% blocks execute
         -:  129:
         -:  130:      // __p is not permitted to be a null pointer.
         -:  131:      void
-function _ZN9__gnu_cxx13new_allocatorI5MovieE10deallocateEPS1_m called 48 returned 100% blocks executed 100%
-       48:  132:      deallocate(_Tp* __p, size_type __t __attribute__ ((__unused__)))
-       48:  132-block  0
+       35:  132:      deallocate(_Tp* __p, size_type __t __attribute__ ((__unused__)))
         -:  133:      {
         -:  134:#if __cpp_aligned_new
         -:  135:	if (alignof(_Tp) > __STDCPP_DEFAULT_NEW_ALIGNMENT__)
@@ -166,9 +168,7 @@ function _ZN9__gnu_cxx13new_allocatorI5MovieE10deallocateEPS1_m called 48 return
         -:  142:	    return;
         -:  143:	  }
         -:  144:#endif
-       48:  145:	::operator delete(__p
-       48:  145-block  0
-call    0 returned 48
+       35:  145:	::operator delete(__p
         -:  146:#if __cpp_sized_deallocation
         -:  147:			  , __t * sizeof(_Tp)
         -:  148:#endif

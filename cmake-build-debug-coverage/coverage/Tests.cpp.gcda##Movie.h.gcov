@@ -17,12 +17,12 @@
         -:   13:    string mainActor;
         -:   14:
         -:   15:public:
-function _ZN5MovieC2Ev called 4 returned 100% blocks executed 100%
-        4:   16:    Movie() = default;
-        4:   16-block  0
-call    0 returned 4
-call    1 returned 4
-call    2 returned 4
+function _ZN5MovieC2Ev called 8 returned 100% blocks executed 100%
+        8:   16:    Movie() = default;
+        8:   16-block  0
+call    0 returned 8
+call    1 returned 8
+call    2 returned 8
         -:   17:
         -:   18:    Movie(const string &title, const string &genre, int year, const string &mainActor);
         -:   19:
@@ -31,12 +31,12 @@ call    2 returned 4
         -:   22:    Movie &operator=(const Movie &movie);
         -:   23:
         -:   24:    //Rule of 5
-function _ZN5MovieD2Ev called 161 returned 100% blocks executed 100%
-      161:   25:    ~Movie() = default;
-      161:   25-block  0
-call    0 returned 161
-call    1 returned 161
-call    2 returned 161
+function _ZN5MovieD2Ev called 272 returned 100% blocks executed 100%
+      272:   25:    ~Movie() = default;
+      272:   25-block  0
+call    0 returned 272
+call    1 returned 272
+call    2 returned 272
         -:   26:
         -:   27:    Movie(Movie &&movie) noexcept;
         -:   28:

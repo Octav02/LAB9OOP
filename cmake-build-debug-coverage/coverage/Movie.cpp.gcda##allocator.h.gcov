@@ -157,10 +157,10 @@
         -:  153:      // _GLIBCXX_RESOLVE_LIB_DEFECTS
         -:  154:      // 3035. std::allocator's constructors should be constexpr
         -:  155:      _GLIBCXX20_CONSTEXPR
-function _ZNSaINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2Ev called 24 returned 100% blocks executed 100%
-       24:  156:      allocator() _GLIBCXX_NOTHROW { }
-       24:  156-block  0
-call    0 returned 24
+function _ZNSaINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2Ev called 68 returned 100% blocks executed 100%
+       68:  156:      allocator() _GLIBCXX_NOTHROW { }
+       68:  156-block  0
+call    0 returned 68
         -:  157:
         -:  158:      _GLIBCXX20_CONSTEXPR
         -:  159:      allocator(const allocator& __a) _GLIBCXX_NOTHROW
@@ -178,10 +178,10 @@ call    0 returned 24
         -:  171:#if __cpp_constexpr_dynamic_alloc
         -:  172:      constexpr
         -:  173:#endif
-function _ZNSaINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEED2Ev called 24 returned 100% blocks executed 100%
-       24:  174:      ~allocator() _GLIBCXX_NOTHROW { }
-       24:  174-block  0
-call    0 returned 24
+function _ZNSaINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEED2Ev called 68 returned 100% blocks executed 100%
+       68:  174:      ~allocator() _GLIBCXX_NOTHROW { }
+       68:  174-block  0
+call    0 returned 68
         -:  175:
         -:  176:#if __cplusplus > 201703L
         -:  177:      [[nodiscard,__gnu__::__always_inline__]]

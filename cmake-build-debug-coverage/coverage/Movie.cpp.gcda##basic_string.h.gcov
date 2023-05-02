@@ -6291,27 +6291,27 @@ call    2 returned 3
         -: 6231:  template<typename _CharT>
         -: 6232:    inline
         -: 6233:    typename __gnu_cxx::__enable_if<__is_char<_CharT>::__value, bool>::__type
-function _ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_ called 39 returned 100% blocks executed 100%
-       39: 6234:    operator==(const basic_string<_CharT>& __lhs,
+function _ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_ called 58 returned 100% blocks executed 100%
+       58: 6234:    operator==(const basic_string<_CharT>& __lhs,
         -: 6235:	       const basic_string<_CharT>& __rhs) _GLIBCXX_NOEXCEPT
-       39: 6236:    { return (__lhs.size() == __rhs.size()
-       39: 6236-block  0
-call    0 returned 39
-call    1 returned 39
-       39: 6237:	      && !std::char_traits<_CharT>::compare(__lhs.data(), __rhs.data(),
-branch  0 taken 35 (fallthrough)
+       58: 6236:    { return (__lhs.size() == __rhs.size()
+       58: 6236-block  0
+call    0 returned 58
+call    1 returned 58
+       58: 6237:	      && !std::char_traits<_CharT>::compare(__lhs.data(), __rhs.data(),
+branch  0 taken 54 (fallthrough)
 branch  1 taken 4
-       35: 6237-block  0
-call    2 returned 35
-call    3 returned 35
-call    4 returned 35
-call    5 returned 35
-branch  6 taken 17 (fallthrough)
-branch  7 taken 18
-       17: 6237-block  1
-       22: 6237-block  2
-       39: 6238:						    __lhs.size())); }
-       39: 6238-block  0
+       54: 6237-block  0
+call    2 returned 54
+call    3 returned 54
+call    4 returned 54
+call    5 returned 54
+branch  6 taken 26 (fallthrough)
+branch  7 taken 28
+       26: 6237-block  1
+       32: 6237-block  2
+       58: 6238:						    __lhs.size())); }
+       58: 6238-block  0
         -: 6239:
         -: 6240:  /**
         -: 6241:   *  @brief  Test equivalence of string and C string.
@@ -6692,13 +6692,13 @@ branch  7 taken 18
         -: 6616:#if _GLIBCXX_USE_C99_STDLIB
         -: 6617:  // 21.4 Numeric Conversions [string.conversions].
         -: 6618:  inline int
-function _ZNSt7__cxx114stoiERKNS_12basic_stringIcSt11char_traitsIcESaIcEEEPmi called 23 returned 100% blocks executed 100%
-       23: 6619:  stoi(const string& __str, size_t* __idx = 0, int __base = 10)
-       23: 6620:  { return __gnu_cxx::__stoa<long, int>(&std::strtol, "stoi", __str.c_str(),
-       23: 6620-block  0
-call    0 returned 23
-call    1 returned 23
-       23: 6621:					__idx, __base); }
+function _ZNSt7__cxx114stoiERKNS_12basic_stringIcSt11char_traitsIcESaIcEEEPmi called 67 returned 100% blocks executed 100%
+       67: 6619:  stoi(const string& __str, size_t* __idx = 0, int __base = 10)
+       67: 6620:  { return __gnu_cxx::__stoa<long, int>(&std::strtol, "stoi", __str.c_str(),
+       67: 6620-block  0
+call    0 returned 67
+call    1 returned 67
+       67: 6621:					__idx, __base); }
         -: 6622:
         -: 6623:  inline long
         -: 6624:  stol(const string& __str, size_t* __idx = 0, int __base = 10)

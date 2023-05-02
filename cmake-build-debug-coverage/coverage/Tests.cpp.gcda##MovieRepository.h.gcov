@@ -14,10 +14,10 @@
         -:   10:protected:
         -:   11:    vector<Movie> movies;
         -:   12:public:
-function _ZN15MovieRepositoryC2Ev called 5 returned 100% blocks executed 100%
-        5:   13:    MovieRepository() = default;
-        5:   13-block  0
-call    0 returned 5
+function _ZN15MovieRepositoryC2Ev called 8 returned 100% blocks executed 100%
+        8:   13:    MovieRepository() = default;
+        8:   13-block  0
+call    0 returned 8
         -:   14:
         -:   15:    virtual ~MovieRepository();
         -:   16:

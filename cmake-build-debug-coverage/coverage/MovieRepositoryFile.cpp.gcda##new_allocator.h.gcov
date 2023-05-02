@@ -82,12 +82,12 @@
         -:   78:      _GLIBCXX20_CONSTEXPR
     #####:   79:      new_allocator() _GLIBCXX_USE_NOEXCEPT { }
 ------------------
-_ZN9__gnu_cxx13new_allocatorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2Ev:
-function _ZN9__gnu_cxx13new_allocatorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2Ev called 0 returned 0% blocks executed 0%
-    #####:   79:      new_allocator() _GLIBCXX_USE_NOEXCEPT { }
-------------------
 _ZN9__gnu_cxx13new_allocatorI5MovieEC2Ev:
 function _ZN9__gnu_cxx13new_allocatorI5MovieEC2Ev called 0 returned 0% blocks executed 0%
+    #####:   79:      new_allocator() _GLIBCXX_USE_NOEXCEPT { }
+------------------
+_ZN9__gnu_cxx13new_allocatorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2Ev:
+function _ZN9__gnu_cxx13new_allocatorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2Ev called 0 returned 0% blocks executed 0%
     #####:   79:      new_allocator() _GLIBCXX_USE_NOEXCEPT { }
 ------------------
 _ZN9__gnu_cxx13new_allocatorIcEC2Ev:
@@ -96,16 +96,8 @@ function _ZN9__gnu_cxx13new_allocatorIcEC2Ev called 0 returned 0% blocks execute
 ------------------
         -:   80:
         -:   81:      _GLIBCXX20_CONSTEXPR
-      70*:   82:      new_allocator(const new_allocator&) _GLIBCXX_USE_NOEXCEPT { }
-------------------
-_ZN9__gnu_cxx13new_allocatorI5MovieEC2ERKS2_:
-function _ZN9__gnu_cxx13new_allocatorI5MovieEC2ERKS2_ called 70 returned 100% blocks executed 100%
-       70:   82:      new_allocator(const new_allocator&) _GLIBCXX_USE_NOEXCEPT { }
-------------------
-_ZN9__gnu_cxx13new_allocatorIcEC2ERKS1_:
 function _ZN9__gnu_cxx13new_allocatorIcEC2ERKS1_ called 0 returned 0% blocks executed 0%
     #####:   82:      new_allocator(const new_allocator&) _GLIBCXX_USE_NOEXCEPT { }
-------------------
         -:   83:
         -:   84:      template<typename _Tp1>
         -:   85:	_GLIBCXX20_CONSTEXPR
@@ -116,10 +108,6 @@ function _ZN9__gnu_cxx13new_allocatorIcEC2ERKS1_ called 0 returned 0% blocks exe
 ------------------
 _ZN9__gnu_cxx13new_allocatorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEED2Ev:
 function _ZN9__gnu_cxx13new_allocatorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEED2Ev called 0 returned 0% blocks executed 0%
-    #####:   89:      ~new_allocator() _GLIBCXX_USE_NOEXCEPT { }
-------------------
-_ZN9__gnu_cxx13new_allocatorI5MovieED2Ev:
-function _ZN9__gnu_cxx13new_allocatorI5MovieED2Ev called 0 returned 0% blocks executed 0%
     #####:   89:      ~new_allocator() _GLIBCXX_USE_NOEXCEPT { }
 ------------------
 _ZN9__gnu_cxx13new_allocatorIcED2Ev:
@@ -273,8 +261,8 @@ call    0 never executed
         -:  149:			 );
         -:  150:      }
 ------------------
-_ZN9__gnu_cxx13new_allocatorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE10deallocateEPS6_m:
-function _ZN9__gnu_cxx13new_allocatorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE10deallocateEPS6_m called 0 returned 0% blocks executed 0%
+_ZN9__gnu_cxx13new_allocatorI5MovieE10deallocateEPS1_m:
+function _ZN9__gnu_cxx13new_allocatorI5MovieE10deallocateEPS1_m called 0 returned 0% blocks executed 0%
     #####:  132:      deallocate(_Tp* __p, size_type __t __attribute__ ((__unused__)))
     %%%%%:  132-block  0
         -:  133:      {
@@ -298,8 +286,8 @@ call    0 never executed
         -:  149:			 );
         -:  150:      }
 ------------------
-_ZN9__gnu_cxx13new_allocatorI5MovieE10deallocateEPS1_m:
-function _ZN9__gnu_cxx13new_allocatorI5MovieE10deallocateEPS1_m called 0 returned 0% blocks executed 0%
+_ZN9__gnu_cxx13new_allocatorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE10deallocateEPS6_m:
+function _ZN9__gnu_cxx13new_allocatorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE10deallocateEPS6_m called 0 returned 0% blocks executed 0%
     #####:  132:      deallocate(_Tp* __p, size_type __t __attribute__ ((__unused__)))
     %%%%%:  132-block  0
         -:  133:      {

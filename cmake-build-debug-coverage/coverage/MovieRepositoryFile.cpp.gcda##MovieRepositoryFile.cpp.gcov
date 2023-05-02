@@ -5,21 +5,21 @@
         -:    1:#include <sstream>
         -:    2:#include "MovieRepositoryFile.h"
         -:    3:
-function _ZN19MovieRepositoryFile12loadFromFileEv called 22 returned 100% blocks executed 59%
-       22:    4:void MovieRepositoryFile::loadFromFile() {
-       22:    5:    ifstream fin(this->filename);
-       22:    5-block  0
-call    0 returned 22
-branch  1 taken 22 (fallthrough)
+function _ZN19MovieRepositoryFile12loadFromFileEv called 57 returned 100% blocks executed 58%
+       57:    4:void MovieRepositoryFile::loadFromFile() {
+       57:    5:    ifstream fin(this->filename);
+       57:    5-block  0
+call    0 returned 57
+branch  1 taken 57 (fallthrough)
 branch  2 taken 0 (throw)
-       22:    6:    if (!fin.is_open()) {
-       22:    6-block  0
-call    0 returned 22
-branch  1 taken 22 (fallthrough)
+       57:    6:    if (!fin.is_open()) {
+       57:    6-block  0
+call    0 returned 57
+branch  1 taken 57 (fallthrough)
 branch  2 taken 0 (throw)
-       22:    6-block  1
+       57:    6-block  1
 branch  3 taken 0 (fallthrough)
-branch  4 taken 22
+branch  4 taken 57
     #####:    7:        throw RepositoryException("File could not be opened!");
     %%%%%:    7-block  0
 call    0 never executed
@@ -38,116 +38,114 @@ call    9 never executed
     $$$$$:    7-block  4
 call   10 never executed
         -:    8:    }
-        -:    9:
-       22:   10:    this->movies = vector<Movie>();
-       22:   10-block  0
-call    0 returned 22
-call    1 returned 22
-call    2 returned 22
-       22:   11:    string line;
-call    0 returned 22
-       44:   12:    while (getline(fin, line)) {
-       44:   12-block  0
-call    0 returned 44
-branch  1 taken 44 (fallthrough)
+        -:    9:    //Clear the vector
+       57:   10:    this->movies.clear();
+       57:   10-block  0
+call    0 returned 57
+       57:   11:    string line;
+call    0 returned 57
+      123:   12:    while (getline(fin, line)) {
+      123:   12-block  0
+call    0 returned 123
+branch  1 taken 123 (fallthrough)
 branch  2 taken 0 (throw)
-       44:   12-block  1
-call    3 returned 44
-branch  4 taken 44 (fallthrough)
+      123:   12-block  1
+call    3 returned 123
+branch  4 taken 123 (fallthrough)
 branch  5 taken 0 (throw)
-       44:   12-block  2
-branch  6 taken 22
-branch  7 taken 22 (fallthrough)
-       22:   13:        stringstream ss(line);
-       22:   13-block  0
-call    0 returned 22
-call    1 returned 22
-branch  2 taken 22 (fallthrough)
+      123:   12-block  2
+branch  6 taken 66
+branch  7 taken 57 (fallthrough)
+       66:   13:        stringstream ss(line);
+       66:   13-block  0
+call    0 returned 66
+call    1 returned 66
+branch  2 taken 66 (fallthrough)
 branch  3 taken 0 (throw)
-       22:   14:        vector<string> tokens;
-       22:   14-block  0
-call    0 returned 22
-       22:   15:        string token;
-call    0 returned 22
-      110:   16:        while (getline(ss, token, ',')) {
-      110:   16-block  0
-call    0 returned 110
-branch  1 taken 110 (fallthrough)
+       66:   14:        vector<string> tokens;
+       66:   14-block  0
+call    0 returned 66
+       66:   15:        string token;
+call    0 returned 66
+      330:   16:        while (getline(ss, token, ',')) {
+      330:   16-block  0
+call    0 returned 330
+branch  1 taken 330 (fallthrough)
 branch  2 taken 0 (throw)
-      110:   16-block  1
-call    3 returned 110
-branch  4 taken 110 (fallthrough)
+      330:   16-block  1
+call    3 returned 330
+branch  4 taken 330 (fallthrough)
 branch  5 taken 0 (throw)
-      110:   16-block  2
-branch  6 taken 88
-branch  7 taken 22 (fallthrough)
-       88:   17:            tokens.push_back(token);
-       88:   17-block  0
-call    0 returned 88
-branch  1 taken 88 (fallthrough)
+      330:   16-block  2
+branch  6 taken 264
+branch  7 taken 66 (fallthrough)
+      264:   17:            tokens.push_back(token);
+      264:   17-block  0
+call    0 returned 264
+branch  1 taken 264 (fallthrough)
 branch  2 taken 0 (throw)
         -:   18:        }
-      22*:   19:        if (tokens.size() != 4) {
-       22:   19-block  0
-call    0 returned 22
+      66*:   19:        if (tokens.size() != 4) {
+       66:   19-block  0
+call    0 returned 66
 branch  1 taken 0 (fallthrough)
-branch  2 taken 22
+branch  2 taken 66
     #####:   20:            continue;
     %%%%%:   20-block  0
         -:   21:        }
-       22:   22:        string title = tokens[0];
-       22:   22-block  0
-call    0 returned 22
-call    1 returned 22
-branch  2 taken 22 (fallthrough)
+       66:   22:        string title = tokens[0];
+       66:   22-block  0
+call    0 returned 66
+call    1 returned 66
+branch  2 taken 66 (fallthrough)
 branch  3 taken 0 (throw)
-       22:   23:        string genre = tokens[1];
-       22:   23-block  0
-call    0 returned 22
-call    1 returned 22
-branch  2 taken 22 (fallthrough)
+       66:   23:        string genre = tokens[1];
+       66:   23-block  0
+call    0 returned 66
+call    1 returned 66
+branch  2 taken 66 (fallthrough)
 branch  3 taken 0 (throw)
-       22:   24:        int year = stoi(tokens[2]);
-       22:   24-block  0
-call    0 returned 22
-call    1 returned 22
-branch  2 taken 22 (fallthrough)
+       66:   24:        int year = stoi(tokens[2]);
+       66:   24-block  0
+call    0 returned 66
+call    1 returned 66
+branch  2 taken 66 (fallthrough)
 branch  3 taken 0 (throw)
-       22:   25:        string mainActor = tokens[3];
-       22:   25-block  0
-call    0 returned 22
-call    1 returned 22
-branch  2 taken 22 (fallthrough)
+       66:   25:        string mainActor = tokens[3];
+       66:   25-block  0
+call    0 returned 66
+call    1 returned 66
+branch  2 taken 66 (fallthrough)
 branch  3 taken 0 (throw)
-       22:   26:        Movie movie(title, genre, year, mainActor);
-       22:   26-block  0
-call    0 returned 22
-branch  1 taken 22 (fallthrough)
+       66:   26:        Movie movie(title, genre, year, mainActor);
+       66:   26-block  0
+call    0 returned 66
+branch  1 taken 66 (fallthrough)
 branch  2 taken 0 (throw)
-       22:   27:        this->movies.push_back(movie);
-       22:   27-block  0
-call    0 returned 22
-branch  1 taken 22 (fallthrough)
+       66:   27:        this->movies.push_back(movie);
+       66:   27-block  0
+call    0 returned 66
+branch  1 taken 66 (fallthrough)
 branch  2 taken 0 (throw)
-       22:   28:    }
-       22:   28-block  0
-call    0 returned 22
-call    1 returned 22
-call    2 returned 22
-call    3 returned 22
-       22:   28-block  1
-call    4 returned 22
-branch  5 taken 22 (fallthrough)
+       66:   28:    }
+       66:   28-block  0
+call    0 returned 66
+call    1 returned 66
+call    2 returned 66
+call    3 returned 66
+       66:   28-block  1
+call    4 returned 66
+branch  5 taken 66 (fallthrough)
 branch  6 taken 0
-       22:   28-block  2
-       22:   28-block  3
-call    7 returned 22
-branch  8 taken 22 (fallthrough)
+       66:   28-block  2
+       66:   28-block  3
+call    7 returned 66
+branch  8 taken 66 (fallthrough)
 branch  9 taken 0
-       22:   28-block  4
-       22:   28-block  5
-call   10 returned 22
-branch 11 taken 22 (fallthrough)
+       66:   28-block  4
+       66:   28-block  5
+call   10 returned 66
+branch 11 taken 66 (fallthrough)
 branch 12 taken 0
     $$$$$:   28-block  6
 call   13 never executed
@@ -163,51 +161,51 @@ call   17 never executed
 call   18 never executed
     $$$$$:   28-block 12
 call   19 never executed
-       22:   29:}
-       22:   29-block  0
-call    0 returned 22
-call    1 returned 22
+       57:   29:}
+       57:   29-block  0
+call    0 returned 57
+call    1 returned 57
     $$$$$:   29-block  1
 call    2 never executed
     $$$$$:   29-block  2
 call    3 never executed
         -:   30:
-function _ZN19MovieRepositoryFileC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 2 returned 100% blocks executed 67%
-        2:   31:MovieRepositoryFile::MovieRepositoryFile(const string &filename) {
-        2:   31-block  0
-call    0 returned 2
-call    1 returned 2
-        2:   32:    this->filename = filename;
-call    0 returned 2
-branch  1 taken 2 (fallthrough)
+function _ZN19MovieRepositoryFileC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 3 returned 100% blocks executed 67%
+        3:   31:MovieRepositoryFile::MovieRepositoryFile(const string &filename) {
+        3:   31-block  0
+call    0 returned 3
+call    1 returned 3
+        3:   32:    this->filename = filename;
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
 branch  2 taken 0 (throw)
-        2:   33:    this->loadFromFile();
-        2:   33-block  0
-call    0 returned 2
-branch  1 taken 2 (fallthrough)
+        3:   33:    this->loadFromFile();
+        3:   33-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
 branch  2 taken 0 (throw)
-        2:   34:}
-        2:   34-block  0
+        3:   34:}
+        3:   34-block  0
     $$$$$:   34-block  1
 call    0 never executed
     $$$$$:   34-block  2
 call    1 never executed
         -:   35:
-function _ZN19MovieRepositoryFile11writeToFileEv called 14 returned 100% blocks executed 48%
-       14:   36:void MovieRepositoryFile::writeToFile() {
-       14:   37:    ofstream fout(this->filename);
-       14:   37-block  0
-call    0 returned 14
-branch  1 taken 14 (fallthrough)
+function _ZN19MovieRepositoryFile11writeToFileEv called 24 returned 100% blocks executed 48%
+       24:   36:void MovieRepositoryFile::writeToFile() {
+       24:   37:    ofstream fout(this->filename);
+       24:   37-block  0
+call    0 returned 24
+branch  1 taken 24 (fallthrough)
 branch  2 taken 0 (throw)
-       14:   38:    if (!fout.is_open()) {
-       14:   38-block  0
-call    0 returned 14
-branch  1 taken 14 (fallthrough)
+       24:   38:    if (!fout.is_open()) {
+       24:   38-block  0
+call    0 returned 24
+branch  1 taken 24 (fallthrough)
 branch  2 taken 0 (throw)
-       14:   38-block  1
+       24:   38-block  1
 branch  3 taken 0 (fallthrough)
-branch  4 taken 14
+branch  4 taken 24
     #####:   39:        throw RepositoryException("File could not be opened!");
     %%%%%:   39-block  0
 call    0 never executed
@@ -226,132 +224,138 @@ call    9 never executed
     $$$$$:   39-block  4
 call   10 never executed
         -:   40:    }
-       30:   41:    for (const auto &movie : this->movies) {
-       14:   41-block  0
-call    0 returned 14
-call    1 returned 14
-       16:   41-block  1
-call    2 returned 16
-       16:   41-block  2
-call    3 returned 16
-       30:   41-block  3
-call    4 returned 30
-branch  5 taken 16
-branch  6 taken 14 (fallthrough)
-       16:   42:        fout << movie << "\n";
-call    0 returned 16
-branch  1 taken 16 (fallthrough)
+       54:   41:    for (const auto &movie : this->movies) {
+       24:   41-block  0
+call    0 returned 24
+call    1 returned 24
+       30:   41-block  1
+call    2 returned 30
+       30:   41-block  2
+call    3 returned 30
+       54:   41-block  3
+call    4 returned 54
+branch  5 taken 30
+branch  6 taken 24 (fallthrough)
+       30:   42:        fout << movie << "\n";
+call    0 returned 30
+branch  1 taken 30 (fallthrough)
 branch  2 taken 0 (throw)
-       16:   42-block  0
-call    3 returned 16
-branch  4 taken 16 (fallthrough)
+       30:   42-block  0
+call    3 returned 30
+branch  4 taken 30 (fallthrough)
 branch  5 taken 0 (throw)
         -:   43:    }
-       14:   44:}
-       14:   44-block  0
-call    0 returned 14
+       24:   44:}
+       24:   44-block  0
+call    0 returned 24
     $$$$$:   44-block  1
 call    1 never executed
         -:   45:
-function _ZN19MovieRepositoryFile3addERK5Movie called 8 returned 75% blocks executed 100%
-        8:   46:void MovieRepositoryFile::add(const Movie &movie) {
-        8:   47:    this->loadFromFile();
-        8:   47-block  0
-call    0 returned 8
-        8:   48:    MovieRepository::add(movie);
+function _ZN19MovieRepositoryFile3addERK5Movie called 12 returned 83% blocks executed 100%
+       12:   46:void MovieRepositoryFile::add(const Movie &movie) {
+       12:   47:    this->loadFromFile();
+       12:   47-block  0
+call    0 returned 12
+       12:   48:    MovieRepository::add(movie);
+call    0 returned 10
+       10:   49:    this->writeToFile();
+call    0 returned 10
+       10:   50:    this->loadFromFile();
+call    0 returned 10
+       10:   51:}
+        -:   52:
+function _ZN19MovieRepositoryFile6removeERK5Movie called 12 returned 83% blocks executed 100%
+       12:   53:void MovieRepositoryFile::remove(const Movie &movie) {
+       12:   54:    this->loadFromFile();
+       12:   54-block  0
+call    0 returned 12
+       12:   55:    MovieRepository::remove(movie);
+call    0 returned 10
+       10:   56:    this->writeToFile();
+call    0 returned 10
+       10:   57:    this->loadFromFile();
+call    0 returned 10
+       10:   58:}
+        -:   59:
+function _ZN19MovieRepositoryFile6updateERK5Movie called 6 returned 67% blocks executed 100%
+        6:   60:void MovieRepositoryFile::update(const Movie &movie) {
+        6:   61:    this->loadFromFile();
+        6:   61-block  0
 call    0 returned 6
-        6:   49:    this->writeToFile();
-call    0 returned 6
-        6:   50:}
-        -:   51:
-function _ZN19MovieRepositoryFile6removeERK5Movie called 8 returned 75% blocks executed 100%
-        8:   52:void MovieRepositoryFile::remove(const Movie &movie) {
-        8:   53:    this->loadFromFile();
-        8:   53-block  0
-call    0 returned 8
-        8:   54:    MovieRepository::remove(movie);
-call    0 returned 6
-        6:   55:    this->writeToFile();
-call    0 returned 6
-        6:   56:}
-        -:   57:
-function _ZN19MovieRepositoryFile6updateERK5Movie called 4 returned 50% blocks executed 100%
-        4:   58:void MovieRepositoryFile::update(const Movie &movie) {
-        4:   59:    this->loadFromFile();
-        4:   59-block  0
+        6:   62:    MovieRepository::update(movie);
 call    0 returned 4
-        4:   60:    MovieRepository::update(movie);
-call    0 returned 2
-        2:   61:    this->writeToFile();
-call    0 returned 2
-        2:   62:}
-        -:   63:
-       3*:   64:MovieRepositoryFile::~MovieRepositoryFile() {
-        -:   65://    this->writeToFile();
-        -:   66://    this->movies.clear();
-       3*:   67:}
+        4:   63:    this->writeToFile();
+call    0 returned 4
+        4:   64:    this->loadFromFile();
+call    0 returned 4
+        4:   65:}
+        -:   66:
+       5*:   67:MovieRepositoryFile::~MovieRepositoryFile() {
+        -:   68://    this->writeToFile();
+        -:   69://    this->movies.clear();
+       5*:   70:}
 ------------------
 _ZN19MovieRepositoryFileD0Ev:
 function _ZN19MovieRepositoryFileD0Ev called 0 returned 0% blocks executed 0%
-    #####:   64:MovieRepositoryFile::~MovieRepositoryFile() {
-        -:   65://    this->writeToFile();
-        -:   66://    this->movies.clear();
-    #####:   67:}
-    %%%%%:   67-block  0
+    #####:   67:MovieRepositoryFile::~MovieRepositoryFile() {
+        -:   68://    this->writeToFile();
+        -:   69://    this->movies.clear();
+    #####:   70:}
+    %%%%%:   70-block  0
 call    0 never executed
 call    1 never executed
 ------------------
 _ZN19MovieRepositoryFileD2Ev:
-function _ZN19MovieRepositoryFileD2Ev called 3 returned 100% blocks executed 100%
-        3:   64:MovieRepositoryFile::~MovieRepositoryFile() {
-        -:   65://    this->writeToFile();
-        -:   66://    this->movies.clear();
-        3:   67:}
-        3:   67-block  0
-call    0 returned 3
-call    1 returned 3
+function _ZN19MovieRepositoryFileD2Ev called 5 returned 100% blocks executed 100%
+        5:   67:MovieRepositoryFile::~MovieRepositoryFile() {
+        -:   68://    this->writeToFile();
+        -:   69://    this->movies.clear();
+        5:   70:}
+        5:   70-block  0
+call    0 returned 5
+call    1 returned 5
 ------------------
-        -:   68:
-function _ZNK19MovieRepositoryFile6getAllEv called 12 returned 100% blocks executed 100%
-       12:   69:const vector<Movie> &MovieRepositoryFile::getAll() const {
-       12:   70:    return MovieRepository::getAll();
-       12:   70-block  0
-call    0 returned 12
-        -:   71:}
-        -:   72:
+        -:   71:
+function _ZNK19MovieRepositoryFile6getAllEv called 14 returned 100% blocks executed 100%
+       14:   72:const vector<Movie> &MovieRepositoryFile::getAll() const {
+       14:   73:    return MovieRepository::getAll();
+       14:   73-block  0
+call    0 returned 14
+        -:   74:}
+        -:   75:
 function _ZNK19MovieRepositoryFile4sizeEv called 2 returned 100% blocks executed 100%
-        2:   73:int MovieRepositoryFile::size() const {
-        2:   74:    return MovieRepository::size();
-        2:   74-block  0
+        2:   76:int MovieRepositoryFile::size() const {
+        2:   77:    return MovieRepository::size();
+        2:   77-block  0
 call    0 returned 2
-        -:   75:}
-        -:   76:
-function _ZNK19MovieRepositoryFile8getMovieEi called 2 returned 100% blocks executed 100%
-        2:   77:const Movie &MovieRepositoryFile::getMovie(int index) const {
-        2:   78:    return MovieRepository::getMovie(index);
-        2:   78-block  0
+        -:   78:}
+        -:   79:
+function _ZNK19MovieRepositoryFile8getMovieEi called 7 returned 100% blocks executed 100%
+        7:   80:const Movie &MovieRepositoryFile::getMovie(int index) const {
+        7:   81:    return MovieRepository::getMovie(index);
+        7:   81-block  0
+call    0 returned 7
+        -:   82:}
+        -:   83:
+function _ZNK19MovieRepositoryFile4findERK5Movie called 35 returned 100% blocks executed 100%
+       35:   84:int MovieRepositoryFile::find(const Movie &movie) const {
+       35:   85:    return MovieRepository::find(movie);
+       35:   85-block  0
+call    0 returned 35
+        -:   86:}
+        -:   87:
+function _ZN19MovieRepositoryFileC2Ev called 2 returned 100% blocks executed 62%
+        2:   88:MovieRepositoryFile::MovieRepositoryFile() {
+        2:   88-block  0
 call    0 returned 2
-        -:   79:}
-        -:   80:
-function _ZNK19MovieRepositoryFile4findERK5Movie called 21 returned 100% blocks executed 100%
-       21:   81:int MovieRepositoryFile::find(const Movie &movie) const {
-       21:   82:    return MovieRepository::find(movie);
-       21:   82-block  0
-call    0 returned 21
-        -:   83:}
-        -:   84:
-function _ZN19MovieRepositoryFileC2Ev called 1 returned 100% blocks executed 62%
-        1:   85:MovieRepositoryFile::MovieRepositoryFile() {
-        1:   85-block  0
-call    0 returned 1
-call    1 returned 1
-        1:   86:    this->filename = "";
-call    0 returned 1
-branch  1 taken 1 (fallthrough)
+call    1 returned 2
+        2:   89:    this->filename = "";
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
 branch  2 taken 0 (throw)
-        1:   87:}
-        1:   87-block  0
-    $$$$$:   87-block  1
+        2:   90:}
+        2:   90-block  0
+    $$$$$:   90-block  1
 call    0 never executed
-    $$$$$:   87-block  2
+    $$$$$:   90-block  2
 call    1 never executed

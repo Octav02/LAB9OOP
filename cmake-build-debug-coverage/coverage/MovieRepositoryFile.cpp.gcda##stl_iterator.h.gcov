@@ -1037,10 +1037,10 @@ function _ZN9__gnu_cxx17__normal_iteratorIP5MovieSt6vectorIS1_SaIS1_EEEC2ERKS2_ 
         -: 1022:      // Forward iterator requirements
         -: 1023:      _GLIBCXX20_CONSTEXPR
         -: 1024:      reference
-function _ZNK9__gnu_cxx17__normal_iteratorIP5MovieSt6vectorIS1_SaIS1_EEEdeEv called 127 returned 100% blocks executed 100%
-      127: 1025:      operator*() const _GLIBCXX_NOEXCEPT
-      127: 1026:      { return *_M_current; }
-      127: 1026-block  0
+function _ZNK9__gnu_cxx17__normal_iteratorIP5MovieSt6vectorIS1_SaIS1_EEEdeEv called 141 returned 100% blocks executed 100%
+      141: 1025:      operator*() const _GLIBCXX_NOEXCEPT
+      141: 1026:      { return *_M_current; }
+      141: 1026-block  0
         -: 1027:
         -: 1028:      _GLIBCXX20_CONSTEXPR
         -: 1029:      pointer
@@ -1049,12 +1049,12 @@ function _ZNK9__gnu_cxx17__normal_iteratorIP5MovieSt6vectorIS1_SaIS1_EEEdeEv cal
         -: 1032:
         -: 1033:      _GLIBCXX20_CONSTEXPR
         -: 1034:      __normal_iterator&
-function _ZN9__gnu_cxx17__normal_iteratorIP5MovieSt6vectorIS1_SaIS1_EEEppEv called 41 returned 100% blocks executed 100%
-       41: 1035:      operator++() _GLIBCXX_NOEXCEPT
+function _ZN9__gnu_cxx17__normal_iteratorIP5MovieSt6vectorIS1_SaIS1_EEEppEv called 55 returned 100% blocks executed 100%
+       55: 1035:      operator++() _GLIBCXX_NOEXCEPT
         -: 1036:      {
-       41: 1037:	++_M_current;
-       41: 1038:	return *this;
-       41: 1038-block  0
+       55: 1037:	++_M_current;
+       55: 1038:	return *this;
+       55: 1038-block  0
         -: 1039:      }
         -: 1040:
         -: 1041:      _GLIBCXX20_CONSTEXPR

@@ -12,17 +12,28 @@ void Service::addMovie(const string &title, const string &genre, int year, const
     Movie movie(title, genre, year, mainActor);
     this->validator.validateMovie(movie);
     this->repo.add(movie);
+    UndoAdauga* undoAdauga = new UndoAdauga(this->repo, movie);
+    this->undoActions.push_back(unique_ptr<ActiuneUndo>(undoAdauga));
 }
 
-void Service::removeMovie(const string &title) {
-    Movie movie(title, "", 0, "");
+void Service::removeMovie(const string &title, const string &genre, int year, const string &mainActor) {
+    Movie movie(title, genre, year, mainActor);
     this->repo.remove(movie);
+    UndoSterge* undoSterge = new UndoSterge(this->repo, movie);
+    this->undoActions.push_back(unique_ptr<ActiuneUndo>(undoSterge));
 }
 
 void Service::updateMovie(const string &title, const string &genre, int year, const string &mainActor) {
     Movie movie(title, genre, year, mainActor);
+    int index = this->repo.find(movie);
+    Movie oldMovie;
+    if (index != -1) {
+        oldMovie = this->repo.getMovie(index);
+    }
     this->validator.validateMovie(movie);
     this->repo.update(movie);
+    UndoModifica* undoModifica = new UndoModifica(this->repo, oldMovie);
+    this->undoActions.push_back(unique_ptr<ActiuneUndo>(undoModifica));
 }
 
 const vector<Movie> &Service::getAll() const {
@@ -179,4 +190,12 @@ void Service::saveWatchlistToFile(const string& filename) {
              << endl;
     }
     file.close();
+}
+
+void Service::doUndo() {
+    if (undoActions.empty()) {
+        throw std::runtime_error("No more undos");
+    }
+    undoActions.back()->undo();
+    undoActions.pop_back();
 }

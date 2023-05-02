@@ -50,10 +50,21 @@
         -:   46:   */
         -:   47:  template<typename _Tp>
         -:   48:    inline _GLIBCXX_CONSTEXPR _Tp*
-function _ZSt11__addressofI5MovieEPT_RS1_ called 144 returned 100% blocks executed 100%
-      144:   49:    __addressof(_Tp& __r) _GLIBCXX_NOEXCEPT
-      144:   50:    { return __builtin_addressof(__r); }
-      144:   50-block  0
+      236:   49:    __addressof(_Tp& __r) _GLIBCXX_NOEXCEPT
+      236:   50:    { return __builtin_addressof(__r); }
+------------------
+_ZSt11__addressofISt10unique_ptrI11ActiuneUndoSt14default_deleteIS1_EEEPT_RS5_:
+function _ZSt11__addressofISt10unique_ptrI11ActiuneUndoSt14default_deleteIS1_EEEPT_RS5_ called 63 returned 100% blocks executed 100%
+       63:   49:    __addressof(_Tp& __r) _GLIBCXX_NOEXCEPT
+       63:   50:    { return __builtin_addressof(__r); }
+       63:   50-block  0
+------------------
+_ZSt11__addressofI5MovieEPT_RS1_:
+function _ZSt11__addressofI5MovieEPT_RS1_ called 173 returned 100% blocks executed 100%
+      173:   49:    __addressof(_Tp& __r) _GLIBCXX_NOEXCEPT
+      173:   50:    { return __builtin_addressof(__r); }
+      173:   50-block  0
+------------------
         -:   51:
         -:   52:#if __cplusplus >= 201103L
         -:   53:
@@ -107,8 +118,14 @@ function _ZSt11__addressofI5MovieEPT_RS1_ called 144 returned 100% blocks execut
         -:  101:  template<typename _Tp>
         -:  102:    _GLIBCXX_NODISCARD
         -:  103:    constexpr typename std::remove_reference<_Tp>::type&&
-      62*:  104:    move(_Tp&& __t) noexcept
-      62*:  105:    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+      71*:  104:    move(_Tp&& __t) noexcept
+      71*:  105:    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+------------------
+_ZSt4moveIRP11ActiuneUndoEONSt16remove_referenceIT_E4typeEOS4_:
+function _ZSt4moveIRP11ActiuneUndoEONSt16remove_referenceIT_E4typeEOS4_ called 14 returned 100% blocks executed 100%
+       14:  104:    move(_Tp&& __t) noexcept
+       14:  105:    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+       14:  105-block  0
 ------------------
 _ZSt4moveIRSaIcEEONSt16remove_referenceIT_E4typeEOS3_:
 function _ZSt4moveIRSaIcEEONSt16remove_referenceIT_E4typeEOS3_ called 0 returned 0% blocks executed 0%
@@ -117,10 +134,10 @@ function _ZSt4moveIRSaIcEEONSt16remove_referenceIT_E4typeEOS3_ called 0 returned
     %%%%%:  105-block  0
 ------------------
 _ZSt4moveIR5MovieEONSt16remove_referenceIT_E4typeEOS3_:
-function _ZSt4moveIR5MovieEONSt16remove_referenceIT_E4typeEOS3_ called 62 returned 100% blocks executed 100%
-       62:  104:    move(_Tp&& __t) noexcept
-       62:  105:    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
-       62:  105-block  0
+function _ZSt4moveIR5MovieEONSt16remove_referenceIT_E4typeEOS3_ called 57 returned 100% blocks executed 100%
+       57:  104:    move(_Tp&& __t) noexcept
+       57:  105:    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+       57:  105-block  0
 ------------------
         -:  106:
         -:  107:

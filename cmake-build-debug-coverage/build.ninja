@@ -97,6 +97,18 @@ build CMakeFiles/LAB9OOP.dir/Service.cpp.o: CXX_COMPILER__LAB9OOP_Debug /home/oc
   OBJECT_DIR = CMakeFiles/LAB9OOP.dir
   OBJECT_FILE_DIR = CMakeFiles/LAB9OOP.dir
 
+build CMakeFiles/LAB9OOP.dir/Undo.cpp.o: CXX_COMPILER__LAB9OOP_Debug /home/octav/CLionProjects/LAB9OOP/Undo.cpp || cmake_object_order_depends_target_LAB9OOP
+  DEP_FILE = CMakeFiles/LAB9OOP.dir/Undo.cpp.o.d
+  FLAGS = --coverage -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/LAB9OOP.dir
+  OBJECT_FILE_DIR = CMakeFiles/LAB9OOP.dir
+
+build CMakeFiles/LAB9OOP.dir/UserInterface.cpp.o: CXX_COMPILER__LAB9OOP_Debug /home/octav/CLionProjects/LAB9OOP/UserInterface.cpp || cmake_object_order_depends_target_LAB9OOP
+  DEP_FILE = CMakeFiles/LAB9OOP.dir/UserInterface.cpp.o.d
+  FLAGS = --coverage -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/LAB9OOP.dir
+  OBJECT_FILE_DIR = CMakeFiles/LAB9OOP.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target LAB9OOP
@@ -105,7 +117,7 @@ build CMakeFiles/LAB9OOP.dir/Service.cpp.o: CXX_COMPILER__LAB9OOP_Debug /home/oc
 #############################################
 # Link the executable LAB9OOP
 
-build LAB9OOP: CXX_EXECUTABLE_LINKER__LAB9OOP_Debug CMakeFiles/LAB9OOP.dir/main.cpp.o CMakeFiles/LAB9OOP.dir/Tests.cpp.o CMakeFiles/LAB9OOP.dir/Movie.cpp.o CMakeFiles/LAB9OOP.dir/Exceptions.cpp.o CMakeFiles/LAB9OOP.dir/Validator.cpp.o CMakeFiles/LAB9OOP.dir/MovieRepository.cpp.o CMakeFiles/LAB9OOP.dir/MovieRepositoryFile.cpp.o CMakeFiles/LAB9OOP.dir/Service.cpp.o
+build LAB9OOP: CXX_EXECUTABLE_LINKER__LAB9OOP_Debug CMakeFiles/LAB9OOP.dir/main.cpp.o CMakeFiles/LAB9OOP.dir/Tests.cpp.o CMakeFiles/LAB9OOP.dir/Movie.cpp.o CMakeFiles/LAB9OOP.dir/Exceptions.cpp.o CMakeFiles/LAB9OOP.dir/Validator.cpp.o CMakeFiles/LAB9OOP.dir/MovieRepository.cpp.o CMakeFiles/LAB9OOP.dir/MovieRepositoryFile.cpp.o CMakeFiles/LAB9OOP.dir/Service.cpp.o CMakeFiles/LAB9OOP.dir/Undo.cpp.o CMakeFiles/LAB9OOP.dir/UserInterface.cpp.o
   FLAGS = --coverage -g
   OBJECT_DIR = CMakeFiles/LAB9OOP.dir
   POST_BUILD = :

@@ -8,29 +8,29 @@
         -:    4:#include <vector>
         -:    5:#include <sstream>
         -:    6:
-function _ZN5MovieC2ERKS_ called 75 returned 100% blocks executed 62%
-       75:    7:Movie::Movie(const Movie &movie) {
-       75:    7-block  0
-call    0 returned 75
-call    1 returned 75
-call    2 returned 75
-       75:    8:    this->title = movie.title;
-call    0 returned 75
-branch  1 taken 75 (fallthrough)
+function _ZN5MovieC2ERKS_ called 137 returned 100% blocks executed 62%
+      137:    7:Movie::Movie(const Movie &movie) {
+      137:    7-block  0
+call    0 returned 137
+call    1 returned 137
+call    2 returned 137
+      137:    8:    this->title = movie.title;
+call    0 returned 137
+branch  1 taken 137 (fallthrough)
 branch  2 taken 0 (throw)
-       75:    9:    this->genre = movie.genre;
-       75:    9-block  0
-call    0 returned 75
-branch  1 taken 75 (fallthrough)
+      137:    9:    this->genre = movie.genre;
+      137:    9-block  0
+call    0 returned 137
+branch  1 taken 137 (fallthrough)
 branch  2 taken 0 (throw)
-       75:   10:    this->year = movie.year;
-       75:   11:    this->mainActor = movie.mainActor;
-       75:   11-block  0
-call    0 returned 75
-branch  1 taken 75 (fallthrough)
+      137:   10:    this->year = movie.year;
+      137:   11:    this->mainActor = movie.mainActor;
+      137:   11-block  0
+call    0 returned 137
+branch  1 taken 137 (fallthrough)
 branch  2 taken 0 (throw)
-       75:   12:}
-       75:   12-block  0
+      137:   12:}
+      137:   12-block  0
     $$$$$:   12-block  1
 call    0 never executed
     $$$$$:   12-block  2
@@ -38,30 +38,30 @@ call    1 never executed
     $$$$$:   12-block  3
 call    2 never executed
         -:   13:
-function _ZN5MovieaSERKS_ called 4 returned 100% blocks executed 100%
-        4:   14:Movie &Movie::operator=(const Movie &movie) {
-        4:   15:    if (this != &movie) {
-        4:   15-block  0
-branch  0 taken 4 (fallthrough)
+function _ZN5MovieaSERKS_ called 9 returned 100% blocks executed 100%
+        9:   14:Movie &Movie::operator=(const Movie &movie) {
+        9:   15:    if (this != &movie) {
+        9:   15-block  0
+branch  0 taken 9 (fallthrough)
 branch  1 taken 0
-        4:   16:        this->title = movie.title;
-        4:   16-block  0
-call    0 returned 4
-        4:   17:        this->genre = movie.genre;
-call    0 returned 4
-        4:   18:        this->year = movie.year;
-        4:   19:        this->mainActor = movie.mainActor;
-call    0 returned 4
+        9:   16:        this->title = movie.title;
+        9:   16-block  0
+call    0 returned 9
+        9:   17:        this->genre = movie.genre;
+call    0 returned 9
+        9:   18:        this->year = movie.year;
+        9:   19:        this->mainActor = movie.mainActor;
+call    0 returned 9
         -:   20:    }
-        4:   21:    return *this;
-        4:   21-block  0
+        9:   21:    return *this;
+        9:   21-block  0
         -:   22:}
         -:   23:
-function _ZNK5Movie8getTitleB5cxx11Ev called 46 returned 100% blocks executed 100%
-       46:   24:string Movie::getTitle() const {
-       46:   25:    return this->title;
-       46:   25-block  0
-call    0 returned 46
+function _ZNK5Movie8getTitleB5cxx11Ev called 50 returned 100% blocks executed 100%
+       50:   24:string Movie::getTitle() const {
+       50:   25:    return this->title;
+       50:   25-block  0
+call    0 returned 50
         -:   26:}
         -:   27:
 function _ZN5Movie8setTitleERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 100%
@@ -71,11 +71,11 @@ function _ZN5Movie8setTitleERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcE
 call    0 returned 1
         1:   30:}
         -:   31:
-function _ZNK5Movie8getGenreB5cxx11Ev called 38 returned 100% blocks executed 100%
-       38:   32:string Movie::getGenre() const {
-       38:   33:    return this->genre;
-       38:   33-block  0
-call    0 returned 38
+function _ZNK5Movie8getGenreB5cxx11Ev called 44 returned 100% blocks executed 100%
+       44:   32:string Movie::getGenre() const {
+       44:   33:    return this->genre;
+       44:   33-block  0
+call    0 returned 44
         -:   34:}
         -:   35:
 function _ZN5Movie8setGenreERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 100%
@@ -85,10 +85,10 @@ function _ZN5Movie8setGenreERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcE
 call    0 returned 1
         1:   38:}
         -:   39:
-function _ZNK5Movie7getYearEv called 41 returned 100% blocks executed 100%
-       41:   40:int Movie::getYear() const {
-       41:   41:    return this->year;
-       41:   41-block  0
+function _ZNK5Movie7getYearEv called 45 returned 100% blocks executed 100%
+       45:   40:int Movie::getYear() const {
+       45:   41:    return this->year;
+       45:   41-block  0
         -:   42:}
         -:   43:
 function _ZN5Movie7setYearEi called 1 returned 100% blocks executed 100%
@@ -96,11 +96,11 @@ function _ZN5Movie7setYearEi called 1 returned 100% blocks executed 100%
         1:   45:    this->year = movieYear;
         1:   46:}
         -:   47:
-function _ZNK5Movie12getMainActorB5cxx11Ev called 38 returned 100% blocks executed 100%
-       38:   48:string Movie::getMainActor() const {
-       38:   49:    return this->mainActor;
-       38:   49-block  0
-call    0 returned 38
+function _ZNK5Movie12getMainActorB5cxx11Ev called 42 returned 100% blocks executed 100%
+       42:   48:string Movie::getMainActor() const {
+       42:   49:    return this->mainActor;
+       42:   49-block  0
+call    0 returned 42
         -:   50:}
         -:   51:
 function _ZN5Movie12setMainActorERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 100%
@@ -110,27 +110,27 @@ function _ZN5Movie12setMainActorERKNSt7__cxx1112basic_stringIcSt11char_traitsIcE
 call    0 returned 1
         1:   54:}
         -:   55:
-function _ZNK5MovieeqERKS_ called 36 returned 100% blocks executed 100%
-       36:   56:bool Movie::operator==(const Movie &rhs) const {
-       36:   57:    return this->title == rhs.title;
-       36:   57-block  0
-call    0 returned 36
+function _ZNK5MovieeqERKS_ called 55 returned 100% blocks executed 100%
+       55:   56:bool Movie::operator==(const Movie &rhs) const {
+       55:   57:    return this->title == rhs.title;
+       55:   57-block  0
+call    0 returned 55
         -:   58:}
         -:   59:
-function _ZN5MovieC2EOS_ called 32 returned 100% blocks executed 100%
-       32:   60:Movie::Movie(Movie &&movie) noexcept {
-       32:   60-block  0
-call    0 returned 32
-call    1 returned 32
-call    2 returned 32
-       32:   61:    this->title = movie.title;
-call    0 returned 32
-       32:   62:    this->genre = movie.genre;
-call    0 returned 32
-       32:   63:    this->year = movie.year;
-       32:   64:    this->mainActor = movie.mainActor;
-call    0 returned 32
-       32:   65:}
+function _ZN5MovieC2EOS_ called 27 returned 100% blocks executed 100%
+       27:   60:Movie::Movie(Movie &&movie) noexcept {
+       27:   60-block  0
+call    0 returned 27
+call    1 returned 27
+call    2 returned 27
+       27:   61:    this->title = movie.title;
+call    0 returned 27
+       27:   62:    this->genre = movie.genre;
+call    0 returned 27
+       27:   63:    this->year = movie.year;
+       27:   64:    this->mainActor = movie.mainActor;
+call    0 returned 27
+       27:   65:}
         -:   66:
 function _ZN5MovieaSEOS_ called 30 returned 100% blocks executed 100%
        30:   67:Movie &Movie::operator=(Movie &&movie) noexcept {
@@ -221,18 +221,18 @@ call   34 never executed
 call   35 never executed
         -:   83:}
         -:   84:
-function _ZlsRSoRK5Movie called 17 returned 100% blocks executed 100%
-       17:   85:ostream &operator<<(ostream &os, const Movie &movie) {
-       17:   86:    os << movie.title << "," << movie.genre << "," << movie.year << "," << movie.mainActor;
-       17:   86-block  0
-call    0 returned 17
-call    1 returned 17
-call    2 returned 17
-call    3 returned 17
-call    4 returned 17
-call    5 returned 17
-call    6 returned 17
-       17:   87:    return os;
+function _ZlsRSoRK5Movie called 31 returned 100% blocks executed 100%
+       31:   85:ostream &operator<<(ostream &os, const Movie &movie) {
+       31:   86:    os << movie.title << "," << movie.genre << "," << movie.year << "," << movie.mainActor;
+       31:   86-block  0
+call    0 returned 31
+call    1 returned 31
+call    2 returned 31
+call    3 returned 31
+call    4 returned 31
+call    5 returned 31
+call    6 returned 31
+       31:   87:    return os;
         -:   88:}
         -:   89:
 function _ZrsRSiR5Movie called 2 returned 100% blocks executed 79%
@@ -326,29 +326,29 @@ call    6 never executed
     $$$$$:  111-block  4
 call    7 never executed
         -:  112:
-function _ZN5MovieC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_iS7_ called 51 returned 100% blocks executed 62%
-       51:  113:Movie::Movie(const string &title, const string &genre, int year, const string &mainActor) {
-       51:  113-block  0
-call    0 returned 51
-call    1 returned 51
-call    2 returned 51
-       51:  114:    this->title = title;
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+function _ZN5MovieC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_iS7_ called 100 returned 100% blocks executed 62%
+      100:  113:Movie::Movie(const string &title, const string &genre, int year, const string &mainActor) {
+      100:  113-block  0
+call    0 returned 100
+call    1 returned 100
+call    2 returned 100
+      100:  114:    this->title = title;
+call    0 returned 100
+branch  1 taken 100 (fallthrough)
 branch  2 taken 0 (throw)
-       51:  115:    this->genre = genre;
-       51:  115-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+      100:  115:    this->genre = genre;
+      100:  115-block  0
+call    0 returned 100
+branch  1 taken 100 (fallthrough)
 branch  2 taken 0 (throw)
-       51:  116:    this->year = year;
-       51:  117:    this->mainActor = mainActor;
-       51:  117-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+      100:  116:    this->year = year;
+      100:  117:    this->mainActor = mainActor;
+      100:  117-block  0
+call    0 returned 100
+branch  1 taken 100 (fallthrough)
 branch  2 taken 0 (throw)
-       51:  118:}
-       51:  118-block  0
+      100:  118:}
+      100:  118-block  0
     $$$$$:  118-block  1
 call    0 never executed
     $$$$$:  118-block  2

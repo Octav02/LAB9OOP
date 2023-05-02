@@ -2,22 +2,26 @@
 
 #include "MovieRepositoryFile.h"
 #include "Validator.h"
-
+#include "Undo.h"
+#include <memory>
 class Service {
 private:
     MovieRepositoryFile repo;
     MovieRepository watchlist = MovieRepository();
     Validator validator;
+    vector<unique_ptr<ActiuneUndo>> undoActions;
 public:
     Service() = default;
     Service( const MovieRepositoryFile& repo, const Validator &validator);
     void addMovie(const string &title, const string &genre, int year, const string &mainActor);
-    void removeMovie(const string &title);
+    void removeMovie(const string &title, const string &genre, int year, const string &mainActor);
     void updateMovie(const string &title, const string &genre, int year, const string &mainActor);
     const vector<Movie> &getAll() const;
     int size() const;
     const Movie &getMovie(int index) const;
     int find(const string & title) const;
+
+    void doUndo();
 
     vector<Movie> getMoviesByTitle(const string& title);
     vector<Movie> getMoviesByYear(int year);

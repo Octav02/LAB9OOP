@@ -9,6 +9,7 @@ void Tests::testAll() {
     testRepo();
     testRepoFile();
     testService();
+    testUndo();
 }
 
 void Tests::testMovie() {
@@ -56,6 +57,7 @@ void Tests::testMovie() {
     delete movie2;
     delete movie3;
     delete cm3;
+    delete cm2;
 }
 
 void Tests::testIO() {
@@ -165,7 +167,7 @@ void Tests::testService() {
         assert(true);
     }
     try {
-        service.removeMovie("2");
+        service.removeMovie("2", "2", 2, "2");
     }
     catch (RepositoryException &exception) {
         assert(true);
@@ -187,7 +189,7 @@ void Tests::testService() {
     assert(service.getMovie(0).getTitle() == "1");
     assert(service.size() == 1);
     assert(service.find("1") == 0);
-    service.removeMovie("1");
+    service.removeMovie("1",  "2", 2, "2");
 
     service.addMovie("1", "1", 1, "1");
     service.addMovie("3", "3", 3, "3");
@@ -234,7 +236,40 @@ void Tests::testService() {
     service.saveWatchlistToFile("/home/octav/CLionProjects/LAB9OOP/IORepoTests/testWatchlist");
 
 
-    service.removeMovie("3");
-    service.removeMovie("2");
-    service.removeMovie("1");
+    service.removeMovie("3", "2", 2, "2");
+    service.removeMovie("2", "2", 2, "2");
+    service.removeMovie("1", "2", 2, "2");
+
+
+}
+
+void Tests::testUndo() {
+    MovieRepositoryFile repo = MovieRepositoryFile("/home/octav/CLionProjects/LAB9OOP/IORepoTests/testUndo");
+    Validator validator;
+    Service service = Service(repo, validator);
+    try {
+        service.doUndo();
+        assert(false);
+    }
+    catch (runtime_error &exception) {
+        assert(true);
+    }
+
+    service.addMovie("1", "1", 1, "1");
+    service.addMovie("2", "2", 2, "2");
+    service.doUndo();
+
+    service.addMovie("2", "2", 2, "2");
+    service.removeMovie("2", "2", 2, "2");
+    assert(service.getAll().size() == 1);
+    service.doUndo();
+    assert(service.getAll().size() == 2);
+
+    service.updateMovie("2", "3", 3, "3");
+    assert(service.getMovie(1).getGenre() == "3");
+    service.doUndo();
+    assert(service.getMovie(1).getGenre() == "2");
+
+    service.doUndo();
+    service.doUndo();
 }

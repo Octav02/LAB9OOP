@@ -326,11 +326,11 @@ branch  1 never executed
         -:  310:  template<typename _Iterator>
         -:  311:    _GLIBCXX20_CONSTEXPR
         -:  312:    inline _Iterator
-function _ZSt12__niter_baseIP5MovieET_S2_ called 210 returned 100% blocks executed 100%
-      210:  313:    __niter_base(_Iterator __it)
+function _ZSt12__niter_baseIP5MovieET_S2_ called 84 returned 100% blocks executed 100%
+       84:  313:    __niter_base(_Iterator __it)
         -:  314:    _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
-      210:  315:    { return __it; }
-      210:  315-block  0
+       84:  315:    { return __it; }
+       84:  315-block  0
         -:  316:
         -:  317:  template<typename _Ite, typename _Seq>
         -:  318:    _Ite
@@ -343,12 +343,12 @@ function _ZSt12__niter_baseIP5MovieET_S2_ called 210 returned 100% blocks execut
         -:  325:  template<typename _From, typename _To>
         -:  326:    _GLIBCXX20_CONSTEXPR
         -:  327:    inline _From
-function _ZSt12__niter_wrapIN9__gnu_cxx17__normal_iteratorIP5MovieSt6vectorIS2_SaIS2_EEEES3_ET_S8_T0_ called 6 returned 100% blocks executed 100%
-        6:  328:    __niter_wrap(_From __from, _To __res)
-        6:  329:    { return __from + (__res - std::__niter_base(__from)); }
-        6:  329-block  0
-call    0 returned 6
-call    1 returned 6
+function _ZSt12__niter_wrapIN9__gnu_cxx17__normal_iteratorIP5MovieSt6vectorIS2_SaIS2_EEEES3_ET_S8_T0_ called 7 returned 100% blocks executed 100%
+        7:  328:    __niter_wrap(_From __from, _To __res)
+        7:  329:    { return __from + (__res - std::__niter_base(__from)); }
+        7:  329-block  0
+call    0 returned 7
+call    1 returned 7
         -:  330:
         -:  331:  // No need to wrap, iterator already has the right type.
         -:  332:  template<typename _Iterator>

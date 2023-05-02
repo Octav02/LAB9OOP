@@ -157,10 +157,10 @@
         -:  153:      // _GLIBCXX_RESOLVE_LIB_DEFECTS
         -:  154:      // 3035. std::allocator's constructors should be constexpr
         -:  155:      _GLIBCXX20_CONSTEXPR
-function _ZNSaI5MovieEC2Ev called 29 returned 100% blocks executed 100%
-       29:  156:      allocator() _GLIBCXX_NOTHROW { }
-       29:  156-block  0
-call    0 returned 29
+function _ZNSaI5MovieEC2Ev called 10 returned 100% blocks executed 100%
+       10:  156:      allocator() _GLIBCXX_NOTHROW { }
+       10:  156-block  0
+call    0 returned 10
         -:  157:
         -:  158:      _GLIBCXX20_CONSTEXPR
         -:  159:      allocator(const allocator& __a) _GLIBCXX_NOTHROW
@@ -178,10 +178,20 @@ call    0 returned 29
         -:  171:#if __cpp_constexpr_dynamic_alloc
         -:  172:      constexpr
         -:  173:#endif
-function _ZNSaI5MovieED2Ev called 99 returned 100% blocks executed 100%
-       99:  174:      ~allocator() _GLIBCXX_NOTHROW { }
-       99:  174-block  0
-call    0 returned 99
+       38:  174:      ~allocator() _GLIBCXX_NOTHROW { }
+------------------
+_ZNSaISt10unique_ptrI11ActiuneUndoSt14default_deleteIS0_EEED2Ev:
+function _ZNSaISt10unique_ptrI11ActiuneUndoSt14default_deleteIS0_EEED2Ev called 2 returned 100% blocks executed 100%
+        2:  174:      ~allocator() _GLIBCXX_NOTHROW { }
+        2:  174-block  0
+call    0 returned 2
+------------------
+_ZNSaI5MovieED2Ev:
+function _ZNSaI5MovieED2Ev called 36 returned 100% blocks executed 100%
+       36:  174:      ~allocator() _GLIBCXX_NOTHROW { }
+       36:  174-block  0
+call    0 returned 36
+------------------
         -:  175:
         -:  176:#if __cplusplus > 201703L
         -:  177:      [[nodiscard,__gnu__::__always_inline__]]
