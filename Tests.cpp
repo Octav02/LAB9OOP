@@ -149,7 +149,7 @@ void Tests::testRepoFile() {
 }
 
 void Tests::testService() {
-    MovieRepositoryFile repo = MovieRepositoryFile("/home/octav/CLionProjects/LAB9OOP/IORepoTests/testService");
+    MovieRepositoryFile *repo =  new MovieRepositoryFile("/home/octav/CLionProjects/LAB9OOP/IORepoTests/testService");
     Validator validator;
     Service service = Service(repo, validator);
 
@@ -240,11 +240,11 @@ void Tests::testService() {
     service.removeMovie("2", "2", 2, "2");
     service.removeMovie("1", "2", 2, "2");
 
-
+    delete repo;
 }
 
 void Tests::testUndo() {
-    MovieRepositoryFile repo = MovieRepositoryFile("/home/octav/CLionProjects/LAB9OOP/IORepoTests/testUndo");
+    MovieRepositoryFile* repo =  new MovieRepositoryFile("/home/octav/CLionProjects/LAB9OOP/IORepoTests/testUndo");
     Validator validator;
     Service service = Service(repo, validator);
     try {
@@ -272,4 +272,5 @@ void Tests::testUndo() {
 
     service.doUndo();
     service.doUndo();
+    delete repo;
 }

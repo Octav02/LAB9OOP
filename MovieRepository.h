@@ -2,31 +2,29 @@
 
 #include "Movie.h"
 #include "Exceptions.h"
+#include "AbstractRepository.h"
 #include <vector>
 
 using namespace std;
 
-class MovieRepository {
-protected:
-    vector<Movie> movies;
+class MovieRepository : public AbstractRepository{
 public:
     MovieRepository() = default;
 
-    virtual ~MovieRepository();
+    ~MovieRepository() override;
 
-    virtual void add(const Movie &movie);
+    void add(const Movie &movie) override;
 
-    virtual void remove(const Movie &movie);
+    void remove(const Movie &movie) override;
 
-    virtual void update(const Movie &movie);
+    void update(const Movie &movie) override;
 
-    virtual const vector<Movie> &getAll() const;
+    const vector<Movie> &getAll() const override;
 
-    virtual int size() const;
+    int size() const override;
 
-    virtual const Movie &getMovie(int index) const;
+    const Movie &getMovie(int index) const override;
 
-    virtual int find(const Movie &movie) const;
-
+    int find(const Movie &movie) const override;
 
 };

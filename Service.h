@@ -1,18 +1,20 @@
 #pragma once
-
+#include "AbstractRepository.h"
+#include "MovieRepository.h"
 #include "MovieRepositoryFile.h"
 #include "Validator.h"
 #include "Undo.h"
 #include <memory>
 class Service {
 private:
-    MovieRepositoryFile repo;
+    AbstractRepository* repo;
     MovieRepository watchlist = MovieRepository();
     Validator validator;
     vector<unique_ptr<ActiuneUndo>> undoActions;
 public:
     Service() = default;
-    Service( const MovieRepositoryFile& repo, const Validator &validator);
+    ~Service();
+    Service(AbstractRepository* repo, const Validator& validator) : repo{repo}, validator{validator} {};
     void addMovie(const string &title, const string &genre, int year, const string &mainActor);
     void removeMovie(const string &title, const string &genre, int year, const string &mainActor);
     void updateMovie(const string &title, const string &genre, int year, const string &mainActor);

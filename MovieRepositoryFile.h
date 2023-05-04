@@ -3,7 +3,7 @@
 #include <fstream>
 #include "MovieRepository.h"
 
-class MovieRepositoryFile : public MovieRepository {
+class MovieRepositoryFile : public AbstractRepository {
 private:
     string filename;
     void loadFromFile();

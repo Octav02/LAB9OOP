@@ -45,21 +45,29 @@ void MovieRepositoryFile::writeToFile() {
 
 void MovieRepositoryFile::add(const Movie &movie) {
     this->loadFromFile();
-    MovieRepository::add(movie);
+    if (this->find(movie) != -1)
+        throw RepositoryException("Movie already exists!");
+    this->movies.push_back(movie);
     this->writeToFile();
     this->loadFromFile();
 }
 
 void MovieRepositoryFile::remove(const Movie &movie) {
     this->loadFromFile();
-    MovieRepository::remove(movie);
+    int index = this->find(movie);
+    if (index == -1)
+        throw RepositoryException("Movie does not exist!");
+    this->movies.erase(this->movies.begin() + index);
     this->writeToFile();
     this->loadFromFile();
 }
 
 void MovieRepositoryFile::update(const Movie &movie) {
     this->loadFromFile();
-    MovieRepository::update(movie);
+    int index = this->find(movie);
+    if (index == -1)
+        throw RepositoryException("Movie does not exist!");
+    this->movies[index] = movie;
     this->writeToFile();
     this->loadFromFile();
 }
@@ -70,19 +78,23 @@ MovieRepositoryFile::~MovieRepositoryFile() {
 }
 
 const vector<Movie> &MovieRepositoryFile::getAll() const {
-    return MovieRepository::getAll();
+    return this->movies;
 }
 
 int MovieRepositoryFile::size() const {
-    return MovieRepository::size();
+    return this->movies.size();
 }
 
 const Movie &MovieRepositoryFile::getMovie(int index) const {
-    return MovieRepository::getMovie(index);
+    return this->movies[index];
 }
 
 int MovieRepositoryFile::find(const Movie &movie) const {
-    return MovieRepository::find(movie);
+    for (int i = 0; i < this->movies.size(); i++) {
+        if (this->movies[i] == movie)
+            return i;
+    }
+    return -1;
 }
 
 MovieRepositoryFile::MovieRepositoryFile() {

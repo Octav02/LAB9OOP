@@ -12,26 +12,26 @@ public :
 class UndoAdauga : public ActiuneUndo {
 private:
     Movie movie;
-    MovieRepositoryFile& repo;
+    AbstractRepository* repo;
 public:
-    UndoAdauga(MovieRepositoryFile& repo, const Movie& movie) :  repo{repo}, movie{movie} {};
+    UndoAdauga(AbstractRepository* repo, const Movie& movie) :  repo{repo}, movie{movie} {};
     void undo() override;
 };
 
 class UndoSterge : public ActiuneUndo {
 private:
     Movie movie;
-    MovieRepositoryFile& repo;
+    AbstractRepository* repo;
 public:
-    UndoSterge(MovieRepositoryFile& repo, const Movie& movie) : repo{repo}, movie{movie} {};
+    UndoSterge(AbstractRepository* repo, const Movie& movie) : repo{repo}, movie{movie} {};
     void undo() override;
 };
 
 class UndoModifica : public ActiuneUndo {
 private:
     Movie movie;
-    MovieRepositoryFile& repo;
+    AbstractRepository* repo;
 public:
-    UndoModifica(MovieRepositoryFile& repo, const Movie& movie) : repo{repo}, movie{movie} {};
+    UndoModifica(AbstractRepository* repo, const Movie& movie) : repo{repo}, movie{movie} {};
     void undo() override;
 };

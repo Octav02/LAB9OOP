@@ -3,58 +3,54 @@
 #include <chrono>
 #include "Service.h"
 
-Service::Service( const MovieRepositoryFile& repo, const Validator &validator) {
-    this->repo = repo;
-    this->validator = validator;
-}
 
 void Service::addMovie(const string &title, const string &genre, int year, const string &mainActor) {
     Movie movie(title, genre, year, mainActor);
     this->validator.validateMovie(movie);
-    this->repo.add(movie);
+    this->repo->add(movie);
     UndoAdauga* undoAdauga = new UndoAdauga(this->repo, movie);
     this->undoActions.push_back(unique_ptr<ActiuneUndo>(undoAdauga));
 }
 
 void Service::removeMovie(const string &title, const string &genre, int year, const string &mainActor) {
     Movie movie(title, genre, year, mainActor);
-    this->repo.remove(movie);
+    this->repo->remove(movie);
     UndoSterge* undoSterge = new UndoSterge(this->repo, movie);
     this->undoActions.push_back(unique_ptr<ActiuneUndo>(undoSterge));
 }
 
 void Service::updateMovie(const string &title, const string &genre, int year, const string &mainActor) {
     Movie movie(title, genre, year, mainActor);
-    int index = this->repo.find(movie);
+    int index = this->repo->find(movie);
     Movie oldMovie;
     if (index != -1) {
-        oldMovie = this->repo.getMovie(index);
+        oldMovie = this->repo->getMovie(index);
     }
     this->validator.validateMovie(movie);
-    this->repo.update(movie);
+    this->repo->update(movie);
     UndoModifica* undoModifica = new UndoModifica(this->repo, oldMovie);
     this->undoActions.push_back(unique_ptr<ActiuneUndo>(undoModifica));
 }
 
 const vector<Movie> &Service::getAll() const {
-    return this->repo.getAll();
+    return this->repo->getAll();
 }
 
 int Service::size() const {
-    return this->repo.size();
+    return this->repo->size();
 }
 
 const Movie &Service::getMovie(int index) const {
-    return this->repo.getMovie(index);
+    return this->repo->getMovie(index);
 }
 
 int Service::find(const string & title) const {
     Movie movie(title, "", 0, "");
-    return this->repo.find(movie);
+    return this->repo->find(movie);
 }
 
 vector<Movie> Service::getMoviesByTitle(const string& title) {
-    vector<Movie> movies = repo.getAll();
+    vector<Movie> movies = repo->getAll();
     vector<Movie> moviesByTitle;
     copy_if(movies.begin(), movies.end(), back_inserter(moviesByTitle), [title](const Movie&  movie) {
         return movie.getTitle() == title;
@@ -63,7 +59,7 @@ vector<Movie> Service::getMoviesByTitle(const string& title) {
 }
 
 vector<Movie> Service::getMoviesByYear(int year) {
-    vector<Movie> movies = repo.getAll();
+    vector<Movie> movies = repo->getAll();
     vector<Movie> moviesByYear;
     copy_if(movies.begin(), movies.end(), back_inserter(moviesByYear), [year](const Movie&  movie) {
         return movie.getYear() == year;
@@ -72,7 +68,7 @@ vector<Movie> Service::getMoviesByYear(int year) {
 }
 
 vector<Movie> Service::sortMoviesByTitle(bool ascending) {
-    vector<Movie> movies = repo.getAll();
+    vector<Movie> movies = repo->getAll();
     if (ascending) {
         sort(movies.begin(), movies.end(), [](const Movie&  movie1, const Movie&  movie2) {
             return movie1.getTitle() < movie2.getTitle();
@@ -86,7 +82,7 @@ vector<Movie> Service::sortMoviesByTitle(bool ascending) {
 }
 
 vector<Movie> Service::sortMoviesByGenre(bool ascending) {
-    vector<Movie> movies = repo.getAll();
+    vector<Movie> movies = repo->getAll();
     if (ascending) {
         sort(movies.begin(), movies.end(), [](const Movie&  movie1, const Movie&  movie2) {
             return movie1.getGenre() < movie2.getGenre();
@@ -100,7 +96,7 @@ vector<Movie> Service::sortMoviesByGenre(bool ascending) {
 }
 
 vector<Movie> Service::sortMoviesByYear(bool ascending) {
-    vector<Movie> movies = repo.getAll();
+    vector<Movie> movies = repo->getAll();
     if (ascending) {
         sort(movies.begin(), movies.end(), [](const Movie&  movie1, const Movie&  movie2) {
             return movie1.getYear() < movie2.getYear();
@@ -114,7 +110,7 @@ vector<Movie> Service::sortMoviesByYear(bool ascending) {
 }
 
 vector<Movie> Service::sortMoviesByMainActor(bool ascending) {
-    vector<Movie> movies = repo.getAll();
+    vector<Movie> movies = repo->getAll();
     if (ascending) {
         sort(movies.begin(), movies.end(), [](const Movie&  movie1, const Movie&  movie2) {
             return movie1.getMainActor() < movie2.getMainActor();
@@ -198,4 +194,8 @@ void Service::doUndo() {
     }
     undoActions.back()->undo();
     undoActions.pop_back();
+}
+
+Service::~Service() {
+//    delete repo;
 }
